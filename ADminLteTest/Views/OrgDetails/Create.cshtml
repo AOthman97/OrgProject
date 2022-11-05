@@ -1,0 +1,79 @@
+﻿@model ADminLteTest.Entites.OrgDetails
+
+@{
+    ViewData["Title"] = "Create";
+    var Cities = (IEnumerable<SelectListItem>)ViewBag.Cities;
+    var Districts = (IEnumerable<SelectListItem>)ViewBag.Districts;
+    var OrgTypes = (IEnumerable<SelectListItem>)ViewBag.OrgTypes;
+}
+
+<h1>Create</h1>
+
+<h4>OrgDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NameAr" class="control-label"></label>
+                <input asp-for="NameAr" class="form-control" />
+                <span asp-validation-for="NameAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirectorName" class="control-label"></label>
+                <input asp-for="DirectorName" class="form-control" />
+                <span asp-validation-for="DirectorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FaoundationDate" class="control-label"></label>
+                <input asp-for="FaoundationDate" class="form-control" />
+                <span asp-validation-for="FaoundationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CityNo" class="control-label"></label>
+                <select asp-for="@Model.CityNo" class="form-control"
+                        asp-items="Cities"></select>
+                <span asp-validation-for="CityNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DistrictNo" class="control-label"></label>
+                <select asp-for="@Model.DistrictNo" class="form-control"
+                        asp-items="Districts"></select>
+                <span asp-validation-for="DistrictNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrgTypeNo" class="control-label"></label>
+                <select asp-for="@Model.OrgTypeNo" class="form-control"
+                        asp-items="OrgTypes"></select>
+                <span asp-validation-for="OrgTypeNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

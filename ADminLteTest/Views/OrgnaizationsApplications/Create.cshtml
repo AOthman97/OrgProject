@@ -1,0 +1,103 @@
+﻿@model ADminLteTest.Entites.OrgnaizationsApplication
+
+@{
+    ViewData["Title"] = "Create";
+    var CommunicationTypes = (IEnumerable<SelectListItem>)ViewBag.CommunicationTypes;
+    var OrgDetails = (IEnumerable<SelectListItem>)ViewBag.OrgDetails;
+    var WorkNatures = (IEnumerable<SelectListItem>)ViewBag.WorkNatures;
+    var Staffs = (IEnumerable<SelectListItem>)ViewBag.Staffs;
+    var ProgressTypes = (IEnumerable<SelectListItem>)ViewBag.ProgressTypes;
+}
+
+<h1>Create</h1>
+
+<h4>OrgnaizationsApplication</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ApplicantName" class="control-label"></label>
+                <input asp-for="ApplicantName" class="form-control" />
+                <span asp-validation-for="ApplicantName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrgDetailsNo" class="control-label"></label>
+               <select asp-for="@Model.OrgDetailsNo" class="form-control"
+                        asp-items="OrgDetails"></select>
+                <span asp-validation-for="OrgDetailsNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkNutureNo" class="control-label"></label>
+                <select asp-for="@Model.WorkNutureNo" class="form-control"
+                        asp-items="WorkNatures"></select>
+                <span asp-validation-for="WorkNutureNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffNo" class="control-label"></label>
+                <select asp-for="@Model.StaffNo" class="form-control"
+                        asp-items="Staffs"></select>
+                <span asp-validation-for="StaffNo" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsApproched" /> @Html.DisplayNameFor(model => model.IsApproched)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApprochNature" class="control-label"></label>
+                <input asp-for="ApprochNature" class="form-control" />
+                <span asp-validation-for="ApprochNature" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ResourcesRoom" /> @Html.DisplayNameFor(model => model.ResourcesRoom)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="QualificationPeriod" class="control-label"></label>
+                <input asp-for="QualificationPeriod" class="form-control" />
+                <span asp-validation-for="QualificationPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsProgreessed" /> @Html.DisplayNameFor(model => model.IsProgreessed)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProgressTypeNo" class="control-label"></label>
+                <select asp-for="@Model.ProgressTypeNo" class="form-control"
+                        asp-items="ProgressTypes"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment" class="control-label"></label>
+                <input asp-for="Comment" class="form-control" />
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommunicationTypeNo" class="control-label"></label>
+                <select asp-for="@Model.CommunicationTypeNo" class="form-control"
+                        asp-items="CommunicationTypes"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdeasAndRecommondaions" class="control-label"></label>
+                <input asp-for="IdeasAndRecommondaions" class="form-control" />
+                <span asp-validation-for="IdeasAndRecommondaions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

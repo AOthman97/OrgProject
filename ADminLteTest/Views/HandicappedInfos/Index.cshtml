@@ -1,0 +1,167 @@
+﻿@model IEnumerable<ADminLteTest.Entites.HandicappedInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weaknesses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FatherMobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotherMobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Genders)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrgDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Districts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkNatures)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EconomicLevels)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccommodationTypes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EducationalStatusNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FatherEducationalStatusNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EducationalStatuses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsWorking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HafezCapability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SwimmingCapability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrawAndColoringCapability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LiteratureCapability)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weaknesses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FatherMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Genders.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgDetails.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cities.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Districts.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categories.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkNatures.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EconomicLevels.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccommodationTypes.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EducationalStatusNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FatherEducationalStatusNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EducationalStatuses.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsWorking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HafezCapability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SwimmingCapability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrawAndColoringCapability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LiteratureCapability)
+            </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
