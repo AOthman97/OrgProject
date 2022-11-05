@@ -4,6 +4,7 @@ using ADminLteTest.Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ADminLteTest.Migrations
 {
     [DbContext(typeof(OrgDbContext))]
-    partial class OrgDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221105194145_AddExpertModel")]
+    partial class AddExpertModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -227,47 +229,7 @@ namespace ADminLteTest.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("WorkNatureNo");
-
                     b.ToTable("Expert");
-                });
-
-            modelBuilder.Entity("ADminLteTest.Entites.ExpertQualifications", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Division")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ExpertNo")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Faculty")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("GraduationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("QualificationsNo")
-                        .HasColumnType("int");
-
-                    b.Property<string>("University")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExpertNo");
-
-                    b.HasIndex("QualificationsNo");
-
-                    b.ToTable("ExpertQualifications");
                 });
 
             modelBuilder.Entity("ADminLteTest.Entites.Gender", b =>
@@ -578,36 +540,6 @@ namespace ADminLteTest.Migrations
                     b.ToTable("ProgressTypes");
                 });
 
-            modelBuilder.Entity("ADminLteTest.Entites.Qualifications", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<bool>("IsBsc")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsMsc")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsPhd")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameAr")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Qualifications");
-                });
-
             modelBuilder.Entity("ADminLteTest.Entites.Staff", b =>
                 {
                     b.Property<int>("Id")
@@ -689,36 +621,6 @@ namespace ADminLteTest.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("WorkNatures");
-                });
-
-            modelBuilder.Entity("ADminLteTest.Entites.Expert", b =>
-                {
-                    b.HasOne("ADminLteTest.Entites.WorkNature", "WorkNature")
-                        .WithMany()
-                        .HasForeignKey("WorkNatureNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("WorkNature");
-                });
-
-            modelBuilder.Entity("ADminLteTest.Entites.ExpertQualifications", b =>
-                {
-                    b.HasOne("ADminLteTest.Entites.Expert", "Expert")
-                        .WithMany()
-                        .HasForeignKey("ExpertNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ADminLteTest.Entites.Qualifications", "Qualification")
-                        .WithMany()
-                        .HasForeignKey("QualificationsNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Expert");
-
-                    b.Navigation("Qualification");
                 });
 
             modelBuilder.Entity("ADminLteTest.Entites.HandicappedCategory", b =>

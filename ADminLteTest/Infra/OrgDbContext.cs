@@ -29,5 +29,8 @@ namespace ADminLteTest.Infra
         public DbSet<EducationalStatus> EducationalStatus { get; set; }
         public DbSet<EconomicLevel> EconomicLevel { get; set; }
         public DbSet<HandicappedInfo> HandicappedInfo { get; set; }
+        public DbSet<Expert> Expert { get; set; }
+        public DbSet<Qualifications> Qualifications { get; set; }
+        public DbSet<ExpertQualifications> ExpertQualifications { get; set; }
     }
 }
