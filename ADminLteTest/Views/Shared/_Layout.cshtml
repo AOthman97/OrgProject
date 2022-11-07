@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Dashboard</title>
 
+
+    <link rel="stylesheet" href="~/lib/datatable-js/datatables.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.min.css" asp-append-version="true" />
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -45,6 +49,9 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.min.js" asp-append-version="true"></script>
+    <script src="~/lib/datatable-js/datatables.min.js" asp-append-version="true"></script>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -174,19 +181,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    <script src="~/Scripts/jquery.dataTables.min.js"></script>
-    <script src="~/lib//jquery/dist/jquery.js"></script>
+    @*<script src="~/Scripts/jquery.dataTables.min.js"></script>*@
+    @*<script src="~/lib//jquery/dist/jquery.js"></script>*@
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-    <script src="~/Scripts/dataTables.bootstrap.min.js"></script>
-    <script src="~/content/jquery.datatables.js"></script>
+    @*<script src="~/Scripts/dataTables.bootstrap.min.js"></script>*@
+    @*<script src="~/content/jquery.datatables.js"></script>*@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <!-- ./wrapper -->
     <!-- jQuery -->
-    <script src="~/plugins/jquery/jquery.min.js"></script>
+    @*<script src="~/plugins/jquery/jquery.min.js"></script>*@
     <!-- jQuery UI 1.11.4 -->
-    <script src="~/plugins/jquery-ui/jquery-ui.min.js"></script>
+    @*<script src="~/plugins/jquery-ui/jquery-ui.min.js"></script>*@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
@@ -220,7 +227,7 @@
     <script src="~/dist/js/pages/dashboard.js"></script>
 
     <!-- jQuery -->
-    <script src="~/plugins/jquery/jquery.min.js"></script>
+    @*<script src="~/plugins/jquery/jquery.min.js"></script>*@
     <!-- Bootstrap 4 -->
     <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- DataTables  & Plugins -->
