@@ -4,6 +4,7 @@ using ADminLteTest.Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ADminLteTest.Migrations
 {
     [DbContext(typeof(OrgDbContext))]
-    partial class OrgDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221107181708_AddExpertTrainingModel")]
+    partial class AddExpertTrainingModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -230,35 +232,6 @@ namespace ADminLteTest.Migrations
                     b.HasIndex("WorkNatureNo");
 
                     b.ToTable("Expert");
-                });
-
-            modelBuilder.Entity("ADminLteTest.Entites.ExpertPublications", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("ExpertNo")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("PublishYear")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Publisher")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExpertNo");
-
-                    b.ToTable("ExpertPublications");
                 });
 
             modelBuilder.Entity("ADminLteTest.Entites.ExpertQualifications", b =>
@@ -761,17 +734,6 @@ namespace ADminLteTest.Migrations
                         .IsRequired();
 
                     b.Navigation("WorkNature");
-                });
-
-            modelBuilder.Entity("ADminLteTest.Entites.ExpertPublications", b =>
-                {
-                    b.HasOne("ADminLteTest.Entites.Expert", "Expert")
-                        .WithMany()
-                        .HasForeignKey("ExpertNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Expert");
                 });
 
             modelBuilder.Entity("ADminLteTest.Entites.ExpertQualifications", b =>

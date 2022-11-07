@@ -32,5 +32,7 @@ namespace ADminLteTest.Infra
         public DbSet<Expert> Expert { get; set; }
         public DbSet<Qualifications> Qualifications { get; set; }
         public DbSet<ExpertQualifications> ExpertQualifications { get; set; }
+        public DbSet<ExpertTraining> ExpertTraining { get; set; }
+        public DbSet<ExpertPublications> ExpertPublications { get; set; }
     }
 }
