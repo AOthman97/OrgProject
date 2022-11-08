@@ -22,7 +22,7 @@ namespace ADminLteTest.Controllers
         // GET: OrgnaizationsApplications
         public async Task<IActionResult> Index()
         {
-              return View(await _context.OrgnaizationsApplications.ToListAsync());
+              return View(await _context.OrgnaizationsApplications.Include(o => o.OrgDetails).Include(o => o.WorkNature).ToListAsync());
         }
 
         // GET: OrgnaizationsApplications/Details/5
@@ -34,6 +34,11 @@ namespace ADminLteTest.Controllers
             }
 
             var orgnaizationsApplication = await _context.OrgnaizationsApplications
+                .Include(o => o.OrgDetails)
+                .Include(o => o.WorkNature)
+                .Include(o => o.Staff)
+                .Include(o => o.ProgressType)
+                .Include(o => o.CommunicationType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (orgnaizationsApplication == null)
             {
@@ -83,6 +88,11 @@ namespace ADminLteTest.Controllers
             {
                 return NotFound();
             }
+            ViewBag.CommunicationTypes = new SelectList(_context.CommunicationType.ToList(), "Id", "Name");
+            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "Name");
+            ViewBag.WorkNatures = new SelectList(_context.WorkNatures.ToList(), "Id", "Name");
+            ViewBag.Staffs = new SelectList(_context.Staffs.ToList(), "Id", "Name");
+            ViewBag.ProgressTypes = new SelectList(_context.ProgressTypes.ToList(), "Id", "Name");
             return View(orgnaizationsApplication);
         }
 

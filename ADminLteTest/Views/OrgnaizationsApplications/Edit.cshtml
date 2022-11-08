@@ -1,15 +1,19 @@
 ﻿@model ADminLteTest.Entites.OrgnaizationsApplication
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "التعديل";
+    var CommunicationTypes = (IEnumerable<SelectListItem>)ViewBag.CommunicationTypes;
+    var OrgDetails = (IEnumerable<SelectListItem>)ViewBag.OrgDetails;
+    var WorkNatures = (IEnumerable<SelectListItem>)ViewBag.WorkNatures;
+    var Staffs = (IEnumerable<SelectListItem>)ViewBag.Staffs;
+    var ProgressTypes = (IEnumerable<SelectListItem>)ViewBag.ProgressTypes;
 }
 
-<h1>Edit</h1>
+<h1 class="text-right">التعديل</h1>
 
-<h4>OrgnaizationsApplication</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 text-right">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -25,22 +29,25 @@
             </div>
             <div class="form-group">
                 <label asp-for="OrgDetailsNo" class="control-label"></label>
-                <input asp-for="OrgDetailsNo" class="form-control" />
+                <select asp-for="@Model.OrgDetailsNo" class="form-control"
+                        asp-items="OrgDetails"></select>
                 <span asp-validation-for="OrgDetailsNo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="WorkNutureNo" class="control-label"></label>
-                <input asp-for="WorkNutureNo" class="form-control" />
+                <select asp-for="@Model.WorkNutureNo" class="form-control"
+                        asp-items="WorkNatures"></select>
                 <span asp-validation-for="WorkNutureNo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StaffNo" class="control-label"></label>
-                <input asp-for="StaffNo" class="form-control" />
+                <select asp-for="@Model.StaffNo" class="form-control"
+                        asp-items="Staffs"></select>
                 <span asp-validation-for="StaffNo" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsApproched" /> @Html.DisplayNameFor(model => model.IsApproched)
+                    @Html.DisplayNameFor(model => model.IsApproched) <input class="form-check-input" asp-for="IsApproched" />
                 </label>
             </div>
             <div class="form-group">
@@ -50,7 +57,7 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ResourcesRoom" /> @Html.DisplayNameFor(model => model.ResourcesRoom)
+                    @Html.DisplayNameFor(model => model.ResourcesRoom) <input class="form-check-input" asp-for="ResourcesRoom" />
                 </label>
             </div>
             <div class="form-group">
@@ -60,12 +67,13 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsProgreessed" /> @Html.DisplayNameFor(model => model.IsProgreessed)
+                    @Html.DisplayNameFor(model => model.IsProgreessed) <input class="form-check-input" asp-for="IsProgreessed" />
                 </label>
             </div>
             <div class="form-group">
                 <label asp-for="ProgressTypeNo" class="control-label"></label>
-                <input asp-for="ProgressTypeNo" class="form-control" />
+                <select asp-for="@Model.ProgressTypeNo" class="form-control"
+                        asp-items="ProgressTypes"></select>
                 <span asp-validation-for="ProgressTypeNo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -75,7 +83,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="CommunicationTypeNo" class="control-label"></label>
-                <input asp-for="CommunicationTypeNo" class="form-control" />
+                <select asp-for="@Model.CommunicationTypeNo" class="form-control"
+                        asp-items="CommunicationTypes"></select>
                 <span asp-validation-for="CommunicationTypeNo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -84,14 +93,14 @@
                 <span asp-validation-for="IdeasAndRecommondaions" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="الحفظ" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-right">
+    <a asp-action="Index">العودة إلى القائمة</a>
 </div>
 
 @section Scripts {

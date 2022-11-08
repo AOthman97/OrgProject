@@ -1,7 +1,7 @@
 ﻿@model ADminLteTest.Entites.OrgnaizationsApplication
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "الإضافة";
     var CommunicationTypes = (IEnumerable<SelectListItem>)ViewBag.CommunicationTypes;
     var OrgDetails = (IEnumerable<SelectListItem>)ViewBag.OrgDetails;
     var WorkNatures = (IEnumerable<SelectListItem>)ViewBag.WorkNatures;
@@ -9,12 +9,11 @@
     var ProgressTypes = (IEnumerable<SelectListItem>)ViewBag.ProgressTypes;
 }
 
-<h1>Create</h1>
+<h1 class="text-right">الإضافة</h1>
 
-<h4>OrgnaizationsApplication</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 text-right">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -42,7 +41,7 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsApproched" /> @Html.DisplayNameFor(model => model.IsApproched)
+                    @Html.DisplayNameFor(model => model.IsApproched) <input class="form-check-input" asp-for="IsApproched" />
                 </label>
             </div>
             <div class="form-group">
@@ -52,7 +51,7 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ResourcesRoom" /> @Html.DisplayNameFor(model => model.ResourcesRoom)
+                    @Html.DisplayNameFor(model => model.ResourcesRoom) <input class="form-check-input" asp-for="ResourcesRoom" />
                 </label>
             </div>
             <div class="form-group">
@@ -62,7 +61,7 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsProgreessed" /> @Html.DisplayNameFor(model => model.IsProgreessed)
+                    @Html.DisplayNameFor(model => model.IsProgreessed) <input class="form-check-input" asp-for="IsProgreessed" />
                 </label>
             </div>
             <div class="form-group">
@@ -86,14 +85,14 @@
                 <span asp-validation-for="IdeasAndRecommondaions" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="الإضافة" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-right">
+    <a asp-action="Index">العودة إلى القائمة</a>
 </div>
 
 @section Scripts {

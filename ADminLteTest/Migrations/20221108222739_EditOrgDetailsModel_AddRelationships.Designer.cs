@@ -4,6 +4,7 @@ using ADminLteTest.Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ADminLteTest.Migrations
 {
     [DbContext(typeof(OrgDbContext))]
-    partial class OrgDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221108222739_EditOrgDetailsModel_AddRelationships")]
+    partial class EditOrgDetailsModel_AddRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -600,16 +602,6 @@ namespace ADminLteTest.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommunicationTypeNo");
-
-                    b.HasIndex("OrgDetailsNo");
-
-                    b.HasIndex("ProgressTypeNo");
-
-                    b.HasIndex("StaffNo");
-
-                    b.HasIndex("WorkNutureNo");
-
                     b.ToTable("OrgnaizationsApplications");
                 });
 
@@ -971,49 +963,6 @@ namespace ADminLteTest.Migrations
                     b.Navigation("District");
 
                     b.Navigation("OrgType");
-                });
-
-            modelBuilder.Entity("ADminLteTest.Entites.OrgnaizationsApplication", b =>
-                {
-                    b.HasOne("ADminLteTest.Entites.CommunicationType", "CommunicationType")
-                        .WithMany()
-                        .HasForeignKey("CommunicationTypeNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ADminLteTest.Entites.OrgDetails", "OrgDetails")
-                        .WithMany()
-                        .HasForeignKey("OrgDetailsNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ADminLteTest.Entites.ProgressType", "ProgressType")
-                        .WithMany()
-                        .HasForeignKey("ProgressTypeNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ADminLteTest.Entites.Staff", "Staff")
-                        .WithMany()
-                        .HasForeignKey("StaffNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ADminLteTest.Entites.WorkNature", "WorkNature")
-                        .WithMany()
-                        .HasForeignKey("WorkNutureNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CommunicationType");
-
-                    b.Navigation("OrgDetails");
-
-                    b.Navigation("ProgressType");
-
-                    b.Navigation("Staff");
-
-                    b.Navigation("WorkNature");
                 });
 #pragma warning restore 612, 618
         }

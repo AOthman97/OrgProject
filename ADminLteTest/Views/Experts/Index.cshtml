@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ADminLteTest.Entites.Expert>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "الخبراء";
 }
 
-<h1>Index</h1>
+<h1 class="text-right">الخبراء</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p class="text-right">
+    <a asp-action="Create">إضافة خبير</a>
 </p>
 <table class="table table-striped" id="tblExperts" style="width:100%">
     <thead>
@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th class="text-end">
-                @Html.DisplayNameFor(model => model.WorkNature)
+                طبيعة العمل
             </th>
             <th></th>
         </tr>
@@ -43,12 +43,12 @@
                 @Html.DisplayFor(modelItem => item.WorkNature.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>  |
-                <a asp-controller="ExpertQualifications" asp-action="Index" asp-route-ExpertNo="@item.Id">Qualifications</a> |
-                <a asp-controller="ExpertTrainings" asp-action="Index" asp-route-ExpertNo="@item.Id">Training</a>  |
-                <a asp-controller="ExpertPublications" asp-action="Index" asp-route-ExpertNo="@item.Id">Published Work</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">التعديل</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">التفاصيل</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">الحذف</a>  |
+                <a asp-controller="ExpertQualifications" asp-action="Index" asp-route-ExpertNo="@item.Id">المؤهلات </a> |
+                <a asp-controller="ExpertTrainings" asp-action="Index" asp-route-ExpertNo="@item.Id">التدريب</a>  |
+                <a asp-controller="ExpertPublications" asp-action="Index" asp-route-ExpertNo="@item.Id">الأعمال المنشورة</a>
             </td>
         </tr>
 }
@@ -60,93 +60,22 @@
         $(document).ready( function () {
             $('#tblExperts').DataTable({
                 "language": {
-                    processing: "Processing ",
-                    search: "Search:  ",
-                    lengthMenu:    "Show _MENU_ Records",
-                    info:           "Show _START_ To _END_ From _TOTAL_ Record",
-                    infoEmpty:      "Show 0 To 0 From 0 Records",
-                    loadingRecords: "Processing...",
-                    zeroRecords:    "No Records Found !",
-                    emptyTable:     "No Data !",
+                    processing: "جاري المعالجة ",
+                    search: "البحث:  ",
+                    lengthMenu:    "إظهار _MENU_ سجلات",
+                    info:           "إظهار _START_ إلى _END_ من _TOTAL_ سجل",
+                    infoEmpty:      "إظهار 0 إلى 0 من 0 سجلات",
+                    loadingRecords: "جاري معالجة السجلات...",
+                    zeroRecords:    "لا توجد سجلات !",
+                    emptyTable:     "لا توجد بيانات !",
                     paginate: {
-                        first:      "First",
-                        previous:   "Previous",
-                        next:       "Next",
-                        last:       "Last"
+                        first:      "الأول",
+                        previous:   "السابق",
+                        next:       "التالي",
+                        last:       "الأخير"
                     }
               }
             });
         });
     </script>
 }
-
-@*<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PersonalMobile)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.WorkMobile)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.RegularMail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.WorkingFor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WorkNature)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonalMobile)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.WorkMobile)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegularMail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.WorkingFor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WorkNature.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>  |
-                <a asp-controller="ExpertQualifications" asp-action="Index" asp-route-ExpertNo="@item.Id">Qualifications</a> |
-                <a asp-controller="ExpertTrainings" asp-action="Index" asp-route-ExpertNo="@item.Id">Training</a>  |
-                <a asp-controller="ExpertPublications" asp-action="Index" asp-route-ExpertNo="@item.Id">Published Work</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>*@
-

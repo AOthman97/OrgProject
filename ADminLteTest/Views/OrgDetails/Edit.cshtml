@@ -1,15 +1,17 @@
 ﻿@model ADminLteTest.Entites.OrgDetails
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "التعديل";
+    var Cities = (IEnumerable<SelectListItem>)ViewBag.Cities;
+    var Districts = (IEnumerable<SelectListItem>)ViewBag.Districts;
+    var OrgTypes = (IEnumerable<SelectListItem>)ViewBag.OrgTypes;
 }
 
-<h1>Edit</h1>
+<h1 class="text-right">التعديل</h1>
 
-<h4>OrgDetails</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 text-right">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -45,28 +47,31 @@
             </div>
             <div class="form-group">
                 <label asp-for="CityNo" class="control-label"></label>
-                <input asp-for="CityNo" class="form-control" />
+                <select asp-for="@Model.CityNo" class="form-control"
+                        asp-items="Cities"></select>
                 <span asp-validation-for="CityNo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DistrictNo" class="control-label"></label>
-                <input asp-for="DistrictNo" class="form-control" />
+                <select asp-for="@Model.DistrictNo" class="form-control"
+                        asp-items="Districts"></select>
                 <span asp-validation-for="DistrictNo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="OrgTypeNo" class="control-label"></label>
-                <input asp-for="OrgTypeNo" class="form-control" />
+                <select asp-for="@Model.OrgTypeNo" class="form-control"
+                        asp-items="OrgTypes"></select>
                 <span asp-validation-for="OrgTypeNo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="الحفظ" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-right">
+    <a asp-action="Index">العودة إلى القائمة</a>
 </div>
 
 @section Scripts {

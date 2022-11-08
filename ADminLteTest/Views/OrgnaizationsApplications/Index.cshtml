@@ -1,19 +1,28 @@
 ﻿@model IEnumerable<ADminLteTest.Entites.OrgnaizationsApplication>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "المتقدمين للمنظمات";
 }
 
-<h1>Index</h1>
+<h1 class="text-right">المتقدمين للمنظمات</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p class="text-right">
+    <a asp-action="Create">إضافة متقدم</a>
 </p>
-<table class="table">
+<table class="table table-striped" id="tblOrgnaizationsApplications" style="width:100%">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.ApplicantName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrgDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationDate)
+            </th>
+            <th>
+                طبيعة العمل
             </th>
             <th></th>
         </tr>
@@ -25,11 +34,45 @@
                 @Html.DisplayFor(modelItem => item.ApplicantName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.OrgDetails.NameAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkNature.NameAr)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">التعديل</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">التفاصيل</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">الحذف</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+@section Scripts{
+    <script>
+        $(document).ready( function () {
+            $('#tblOrgnaizationsApplications').DataTable({
+                "language": {
+                    processing: "جاري المعالجة ",
+                    search: "البحث:  ",
+                    lengthMenu:    "إظهار _MENU_ سجلات",
+                    info:           "إظهار _START_ إلى _END_ من _TOTAL_ سجل",
+                    infoEmpty:      "إظهار 0 إلى 0 من 0 سجلات",
+                    loadingRecords: "جاري معالجة السجلات...",
+                    zeroRecords:    "لا توجد سجلات !",
+                    emptyTable:     "لا توجد بيانات !",
+                    paginate: {
+                        first:      "الأول",
+                        previous:   "السابق",
+                        next:       "التالي",
+                        last:       "الأخير"
+                    }
+              }
+            });
+        });
+    </script>
+}

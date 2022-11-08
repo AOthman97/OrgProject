@@ -34,6 +34,9 @@ namespace ADminLteTest.Controllers
             }
 
             var orgDetails = await _context.OrgDetails
+                .Include(o => o.City)
+                .Include(o => o.District)
+                .Include(o => o.OrgType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (orgDetails == null)
             {
@@ -81,6 +84,9 @@ namespace ADminLteTest.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Cities = new SelectList(_context.Cities.ToList(), "Id", "Name");
+            ViewBag.Districts = new SelectList(_context.Districts.ToList(), "Id", "Name");
+            ViewBag.OrgTypes = new SelectList(_context.OrgTypes.ToList(), "Id", "Name");
             return View(orgDetails);
         }
 

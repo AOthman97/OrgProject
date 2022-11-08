@@ -1,10 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Dashboard</title>
-
 
     <link rel="stylesheet" href="~/lib/datatable-js/datatables.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.min.css" asp-append-version="true" />
@@ -62,12 +61,12 @@
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
-            <ul class="navbar-nav">
+            <ul class="navbar-nav text-right">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a asp-controller="Home" class="nav-link">Home</a>
+                    <a asp-controller="Home" class="nav-link">الرئيسية</a>
                 </li>
                 @*<li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -75,7 +74,7 @@
             </ul>
 
             <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto text-right">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
@@ -87,7 +86,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="#" class="brand-link">
                 <img src="~/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Az Dashboard</span>
             </a>
@@ -96,35 +95,35 @@
             <div class="sidebar">
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column text-right" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
                             <a asp-controller="OrgDetails" asp-action="Index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Org Details</p>
+                                <p>تفاصيل المنظمات</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a asp-controller="OrgnaizationsApplications" asp-action="Index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Orgnaizations Application</p>
+                                <p>المتقدمين للمنظمات</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a asp-controller="HandicappedCategories" asp-action="Index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Handicapped Category</p>
+                                <p>فئات الحالات الخاصة</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a asp-controller="HandicappedInfos" asp-action="Index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Handicapped Info</p>
+                                <p>المعلومات الشخصية</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a asp-controller="Experts" asp-action="Index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Experts</p>
+                                <p>الخبراء</p>
                             </a>
                         </li>
                     </ul>
