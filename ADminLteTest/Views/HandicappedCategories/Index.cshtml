@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<ADminLteTest.Entites.OrgDetails>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "فئات الحالات الخاصة";
 }
 
-<h1>Index</h1>
+<h1 class="text-right">فئات الحالات الخاصة</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p class="text-right">
+    <a asp-action="Create">إضافة فئة حالة خاصة</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                Organization
+                المنظمة
             </th>
             <th></th>
         </tr>
@@ -22,10 +22,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.NameAr)
             </td>
             <td>
-                <a asp-action="NewIndex" asp-route-OrgDetailsId="@item.Id">Details</a>
+                <a asp-action="NewIndex" asp-route-OrgDetailsId="@item.Id">تفاصيل الفئات</a>
             </td>
         </tr>
 }

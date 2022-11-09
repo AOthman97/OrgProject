@@ -53,7 +53,7 @@ namespace ADminLteTest.Controllers
             ViewBag.Experts = new SelectList(_context.Expert.ToList(), "Id", "FullName");
             if (ExpertNo != 0 && ExpertNo != null)
                 ViewBag.Experts = new SelectList(_context.Expert.ToList(), "Id", "FullName", ExpertNo);
-            ViewBag.Qualifications = new SelectList(_context.Qualifications.ToList(), "Id", "Name");
+            ViewBag.Qualifications = new SelectList(_context.Qualifications.ToList(), "Id", "NameAr");
             return View();
         }
 
@@ -87,7 +87,7 @@ namespace ADminLteTest.Controllers
                 return NotFound();
             }
             ViewBag.Experts = new SelectList(_context.Expert.ToList(), "Id", "FullName");
-            ViewBag.Qualifications = new SelectList(_context.Qualifications.ToList(), "Id", "Name");
+            ViewBag.Qualifications = new SelectList(_context.Qualifications.ToList(), "Id", "NameAr");
             return View(expertQualifications);
         }
 

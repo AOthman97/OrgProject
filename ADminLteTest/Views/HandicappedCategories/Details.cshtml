@@ -1,48 +1,47 @@
 ﻿@model ADminLteTest.Entites.HandicappedCategory
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "التفاصيل";
 }
 
-<h1>Details</h1>
+<h1 class="text-right">التفاصيل</h1>
 
 <div>
-    <h4>HandicappedCategory</h4>
     <hr />
-    <dl class="row">
+    <dl class="row text-right">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.OrgDetailsNo)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OrgDetails.Name)
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.OrgDetails.NameAr)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CategoryNo)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Categories.Name)
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Categories.NameAr)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.AgeNo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Ages.AgeAvarege)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.GenderNo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Genders.GenderType)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Quantity)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Quantity)
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="text-right">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">التعديل</a> |
+    <a asp-action="Index">العودة إلى القائمة</a>
 </div>

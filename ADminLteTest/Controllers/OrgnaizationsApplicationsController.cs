@@ -51,11 +51,11 @@ namespace ADminLteTest.Controllers
         // GET: OrgnaizationsApplications/Create
         public IActionResult Create()
         {
-            ViewBag.CommunicationTypes = new SelectList(_context.CommunicationType.ToList() , "Id", "Name");
-            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList() , "Id", "Name");
-            ViewBag.WorkNatures = new SelectList(_context.WorkNatures.ToList() , "Id", "Name");
-            ViewBag.Staffs = new SelectList(_context.Staffs.ToList() , "Id", "Name");
-            ViewBag.ProgressTypes = new SelectList(_context.ProgressTypes.ToList() , "Id", "Name");
+            ViewBag.CommunicationTypes = new SelectList(_context.CommunicationType.ToList() , "Id", "NameAr");
+            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList() , "Id", "NameAr");
+            ViewBag.WorkNatures = new SelectList(_context.WorkNatures.ToList() , "Id", "NameAr");
+            ViewBag.Staffs = new SelectList(_context.Staffs.ToList() , "Id", "NameAr");
+            ViewBag.ProgressTypes = new SelectList(_context.ProgressTypes.ToList() , "Id", "NameAr");
             return View();
         }
 
@@ -88,11 +88,11 @@ namespace ADminLteTest.Controllers
             {
                 return NotFound();
             }
-            ViewBag.CommunicationTypes = new SelectList(_context.CommunicationType.ToList(), "Id", "Name");
-            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "Name");
-            ViewBag.WorkNatures = new SelectList(_context.WorkNatures.ToList(), "Id", "Name");
-            ViewBag.Staffs = new SelectList(_context.Staffs.ToList(), "Id", "Name");
-            ViewBag.ProgressTypes = new SelectList(_context.ProgressTypes.ToList(), "Id", "Name");
+            ViewBag.CommunicationTypes = new SelectList(_context.CommunicationType.ToList(), "Id", "NameAr");
+            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "NameAr");
+            ViewBag.WorkNatures = new SelectList(_context.WorkNatures.ToList(), "Id", "NameAr");
+            ViewBag.Staffs = new SelectList(_context.Staffs.ToList(), "Id", "NameAr");
+            ViewBag.ProgressTypes = new SelectList(_context.ProgressTypes.ToList(), "Id", "NameAr");
             return View(orgnaizationsApplication);
         }
 

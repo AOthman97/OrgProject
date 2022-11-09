@@ -49,9 +49,9 @@ namespace ADminLteTest.Controllers
         // GET: OrgDetails/Create
         public IActionResult Create()
         {
-            ViewBag.Cities = new SelectList(_context.Cities.ToList(), "Id", "Name");
-            ViewBag.Districts = new SelectList(_context.Districts.ToList(), "Id", "Name");
-            ViewBag.OrgTypes = new SelectList(_context.OrgTypes.ToList(), "Id", "Name");
+            ViewBag.Cities = new SelectList(_context.Cities.ToList(), "Id", "NameAr");
+            ViewBag.Districts = new SelectList(_context.Districts.ToList(), "Id", "NameAr");
+            ViewBag.OrgTypes = new SelectList(_context.OrgTypes.ToList(), "Id", "NameAr");
             return View();
         }
 
@@ -84,9 +84,9 @@ namespace ADminLteTest.Controllers
             {
                 return NotFound();
             }
-            ViewBag.Cities = new SelectList(_context.Cities.ToList(), "Id", "Name");
-            ViewBag.Districts = new SelectList(_context.Districts.ToList(), "Id", "Name");
-            ViewBag.OrgTypes = new SelectList(_context.OrgTypes.ToList(), "Id", "Name");
+            ViewBag.Cities = new SelectList(_context.Cities.ToList(), "Id", "NameAr");
+            ViewBag.Districts = new SelectList(_context.Districts.ToList(), "Id", "NameAr");
+            ViewBag.OrgTypes = new SelectList(_context.OrgTypes.ToList(), "Id", "NameAr");
             return View(orgDetails);
         }
 

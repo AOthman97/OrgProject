@@ -48,7 +48,7 @@ namespace ADminLteTest.Controllers
         // GET: Experts/Create
         public IActionResult Create()
         {
-            ViewBag.WorkNature = new SelectList(_context.WorkNatures.ToList(), "Id", "Name");
+            ViewBag.WorkNature = new SelectList(_context.WorkNatures.ToList(), "Id", "NameAr");
             return View();
         }
 
@@ -82,7 +82,7 @@ namespace ADminLteTest.Controllers
             {
                 return NotFound();
             }
-            ViewBag.WorkNature = new SelectList(_context.WorkNatures.ToList(), "Id", "Name");
+            ViewBag.WorkNature = new SelectList(_context.WorkNatures.ToList(), "Id", "NameAr");
             return View(expert);
         }
 

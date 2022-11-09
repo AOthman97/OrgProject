@@ -1,22 +1,22 @@
 ﻿@model IEnumerable<ADminLteTest.Entites.ExpertQualifications>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "المؤهلات";
 }
 
-<h1>Index</h1>
+<h1 class="text-right">المؤهلات</h1>
 
-<p>
-    <a asp-action="Create" asp-route-ExpertNo="@ViewBag.ExpertNo">Create New</a>
+<p class="text-right">
+    <a asp-action="Create" asp-route-ExpertNo="@ViewBag.ExpertNo">إضافة مؤهل</a>
 </p>
-<table class="table">
+<table class="table table-striped" id="tblExpertQualifications" style="width:100%">
     <thead>
         <tr>
             @*<th>
                 @Html.DisplayNameFor(model => model.Expert)
             </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.Qualification)
+                المؤهل
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Division)
@@ -55,11 +55,36 @@
                 @Html.DisplayFor(modelItem => item.GraduationDate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">التعديل</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">التفاصيل</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">الحذف</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+@section Scripts{
+    <script>
+        $(document).ready( function () {
+            $('#tblExpertQualifications').DataTable({
+                "language": {
+                    processing: "جاري المعالجة ",
+                    search: "البحث:  ",
+                    lengthMenu:    "إظهار _MENU_ سجلات",
+                    info:           "إظهار _START_ إلى _END_ من _TOTAL_ سجل",
+                    infoEmpty:      "إظهار 0 إلى 0 من 0 سجلات",
+                    loadingRecords: "جاري معالجة السجلات...",
+                    zeroRecords:    "لا توجد سجلات !",
+                    emptyTable:     "لا توجد بيانات !",
+                    paginate: {
+                        first:      "الأول",
+                        previous:   "السابق",
+                        next:       "التالي",
+                        last:       "الأخير"
+                    }
+              }
+            });
+        });
+    </script>
+}

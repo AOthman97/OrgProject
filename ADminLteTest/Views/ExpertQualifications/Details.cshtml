@@ -1,54 +1,53 @@
 ﻿@model ADminLteTest.Entites.ExpertQualifications
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "التفاصيل";
 }
 
-<h1>Details</h1>
+<h1 class="text-right">التفاصيل</h1>
 
 <div>
-    <h4>ExpertQualifications</h4>
     <hr />
-    <dl class="row">
+    <dl class="row text-right">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Expert)
+            الخبير
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Expert.Id)
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Expert.FullName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Qualification)
+            المؤهل
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Qualification.Id)
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Qualification.NameAr)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Division)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Division)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Faculty)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Faculty)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.University)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.University)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.GraduationDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.GraduationDate)
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="text-right">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">التعديل</a> |
+    <a asp-action="Index">العودة إلى القائمة</a>
 </div>

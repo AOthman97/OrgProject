@@ -10,6 +10,7 @@ namespace ADminLteTest.Entites
         [Display(Name = "الإسم")]
         public string ApplicantName { get; set; }
         [Required(ErrorMessage = "تاريخ التقديم مطلوب!")]
+        [DataType(DataType.Date)]
         [Display(Name = "تاريخ التقديم")]
         public DateTime ApplicationDate { get; set; } = DateTime.Now;
         [Required(ErrorMessage = "المنظمة مطلوب!")]

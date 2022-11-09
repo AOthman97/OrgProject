@@ -1,7 +1,7 @@
 ﻿@model ADminLteTest.Entites.HandicappedInfo
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "التعديل";
     var OrgDetails = (IEnumerable<SelectListItem>)ViewBag.OrgDetails;
     var Category = (IEnumerable<SelectListItem>)ViewBag.Category;
     var City = (IEnumerable<SelectListItem>)ViewBag.City;
@@ -15,12 +15,11 @@
     var MotherEducationalStatus = (IEnumerable<SelectListItem>)ViewBag.MotherEducationalStatus;
 }
 
-<h1>Edit</h1>
+<h1 class="text-right">التعديل</h1>
 
-<h4>HandicappedInfo</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 text-right">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -127,38 +126,38 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsWorking" /> @Html.DisplayNameFor(model => model.IsWorking)
+                    @Html.DisplayNameFor(model => model.IsWorking) <input class="form-check-input" asp-for="IsWorking" /> 
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="HafezCapability" /> @Html.DisplayNameFor(model => model.HafezCapability)
+                    @Html.DisplayNameFor(model => model.HafezCapability) <input class="form-check-input" asp-for="HafezCapability" /> 
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="SwimmingCapability" /> @Html.DisplayNameFor(model => model.SwimmingCapability)
+                    @Html.DisplayNameFor(model => model.SwimmingCapability) <input class="form-check-input" asp-for="SwimmingCapability" /> 
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="DrawAndColoringCapability" /> @Html.DisplayNameFor(model => model.DrawAndColoringCapability)
+                    @Html.DisplayNameFor(model => model.DrawAndColoringCapability) <input class="form-check-input" asp-for="DrawAndColoringCapability" /> 
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="LiteratureCapability" /> @Html.DisplayNameFor(model => model.LiteratureCapability)
+                    @Html.DisplayNameFor(model => model.LiteratureCapability) <input class="form-check-input" asp-for="LiteratureCapability" /> 
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="الحفظ" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-right">
+    <a asp-action="Index">العودة إلى القائمة</a>
 </div>
 
 @section Scripts {

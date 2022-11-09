@@ -27,6 +27,7 @@ namespace ADminLteTest.Entites
         [Display(Name = "الجامعة")]
         public string University { get; set; }
         [Required(ErrorMessage = "تاريخ التخرج مطلوب!")]
+        [DataType(DataType.Date)]
         [Display(Name = "تاريخ التخرج")]
         public DateTime GraduationDate { get; set; }
     }

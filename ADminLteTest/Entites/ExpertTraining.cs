@@ -22,6 +22,7 @@ namespace ADminLteTest.Entites
         [Display(Name = "المدة")]
         public int Period { get; set; }
         [Required(ErrorMessage = "التاريخ مطلوب!")]
+        [DataType(DataType.Date)]
         [Display(Name = "التاريخ")]
         public DateTime Date { get; set; }
     }

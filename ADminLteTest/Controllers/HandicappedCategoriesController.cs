@@ -24,7 +24,8 @@ namespace ADminLteTest.Controllers
                                         select new OrgDetails()
                                         {
                                             Id = b.Id,
-                                            Name = b.Name
+                                            Name = b.Name,
+                                            NameAr = b.NameAr
                                         }).Distinct().AsNoTracking();
             return View(await applicationDbContext.ToListAsync());
         }
@@ -64,10 +65,10 @@ namespace ADminLteTest.Controllers
         // GET: HandicappedCategories/Create
         public IActionResult Create(int? OrgDetailsNo)
         {
-            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "Name");
+            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "NameAr");
             if(OrgDetailsNo != 0 && OrgDetailsNo != null)
-                ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "Name", OrgDetailsNo);
-            ViewBag.Category = new SelectList(_context.Category.ToList(), "Id", "Name");
+                ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "NameAr", OrgDetailsNo);
+            ViewBag.Category = new SelectList(_context.Category.ToList(), "Id", "NameAr");
             ViewBag.Ages = new SelectList(_context.Ages.ToList(), "Id", "AgeAvarege");
             ViewBag.Genders = new SelectList(_context.Genders.ToList(), "Id", "GenderType");
             return View();
@@ -102,8 +103,8 @@ namespace ADminLteTest.Controllers
             {
                 return NotFound();
             }
-            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "Name");
-            ViewBag.Category = new SelectList(_context.Category.ToList(), "Id", "Name");
+            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "NameAr");
+            ViewBag.Category = new SelectList(_context.Category.ToList(), "Id", "NameAr");
             ViewBag.Ages = new SelectList(_context.Ages.ToList(), "Id", "AgeAvarege");
             ViewBag.Genders = new SelectList(_context.Genders.ToList(), "Id", "GenderType");
             return View(handicappedCategory);

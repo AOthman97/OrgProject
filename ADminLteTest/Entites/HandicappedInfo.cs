@@ -23,6 +23,7 @@ namespace ADminLteTest.Entites
         [Display(Name = "رقم هاتف الأم")]
         public string MotherMobile { get; set; }
         [Required(ErrorMessage = "تاريخ الميلاد مطلوب!")]
+        [DataType(DataType.Date)]
         [Display(Name = "تاريخ الميلاد")]
         public DateTime BirthDate { get; set; }
         [Required(ErrorMessage = "العمر مطلوب!")]

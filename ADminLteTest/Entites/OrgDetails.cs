@@ -22,6 +22,7 @@ namespace ADminLteTest.Entites
         [Display(Name = "البريد الإليكتروني")]
         public string Email { get; set; }
         [Required(ErrorMessage = "تاريخ التأسيس مطلوب!")]
+        [DataType(DataType.Date)]
         [Display(Name = "تاريخ التأسيس")]
         public DateTime FaoundationDate { get; set; } = DateTime.Now;
         [Required(ErrorMessage = "المدينة مطلوبة!")]

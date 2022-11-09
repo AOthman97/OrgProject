@@ -58,17 +58,17 @@ namespace ADminLteTest.Controllers
         // GET: HandicappedInfos/Create
         public IActionResult Create()
         {
-            ViewBag.City = new SelectList(_context.Cities.ToList(), "Id", "Name");
-            ViewBag.District = new SelectList(_context.Districts.ToList(), "Id", "Name");
-            ViewBag.AccommodationType = new SelectList(_context.AccommodationType.ToList(), "Id", "Name");
+            ViewBag.City = new SelectList(_context.Cities.ToList(), "Id", "NameAr");
+            ViewBag.District = new SelectList(_context.Districts.ToList(), "Id", "NameAr");
+            ViewBag.AccommodationType = new SelectList(_context.AccommodationType.ToList(), "Id", "NameAr");
             ViewBag.Genders = new SelectList(_context.Genders.ToList(), "Id", "GenderType");
-            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "Name");
-            ViewBag.Category = new SelectList(_context.Category.ToList(), "Id", "Name");
-            ViewBag.WorkNature = new SelectList(_context.WorkNatures.ToList(), "Id", "Name");
-            ViewBag.EconomicLevel = new SelectList(_context.EconomicLevel.ToList(), "Id", "Name");
-            ViewBag.PersonalEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "Name");
-            ViewBag.FatherEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "Name");
-            ViewBag.MotherEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "Name");
+            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "NameAr");
+            ViewBag.Category = new SelectList(_context.Category.ToList(), "Id", "NameAr");
+            ViewBag.WorkNature = new SelectList(_context.WorkNatures.ToList(), "Id", "NameAr");
+            ViewBag.EconomicLevel = new SelectList(_context.EconomicLevel.ToList(), "Id", "NameAr");
+            ViewBag.PersonalEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "NameAr");
+            ViewBag.FatherEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "NameAr");
+            ViewBag.MotherEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "NameAr");
             return View();
         }
 
@@ -110,17 +110,17 @@ namespace ADminLteTest.Controllers
             {
                 return NotFound();
             }
-            ViewBag.City = new SelectList(_context.Cities.ToList(), "Id", "Name");
-            ViewBag.District = new SelectList(_context.Districts.ToList(), "Id", "Name");
-            ViewBag.AccommodationType = new SelectList(_context.AccommodationType.ToList(), "Id", "Name");
+            ViewBag.City = new SelectList(_context.Cities.ToList(), "Id", "NameAr");
+            ViewBag.District = new SelectList(_context.Districts.ToList(), "Id", "NameAr");
+            ViewBag.AccommodationType = new SelectList(_context.AccommodationType.ToList(), "Id", "NameAr");
             ViewBag.Genders = new SelectList(_context.Genders.ToList(), "Id", "GenderType");
-            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "Name");
-            ViewBag.Category = new SelectList(_context.Category.ToList(), "Id", "Name");
-            ViewBag.WorkNature = new SelectList(_context.WorkNatures.ToList(), "Id", "Name");
-            ViewBag.EconomicLevel = new SelectList(_context.EconomicLevel.ToList(), "Id", "Name");
-            ViewBag.PersonalEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "Name");
-            ViewBag.FatherEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "Name");
-            ViewBag.MotherEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "Name");
+            ViewBag.OrgDetails = new SelectList(_context.OrgDetails.ToList(), "Id", "NameAr");
+            ViewBag.Category = new SelectList(_context.Category.ToList(), "Id", "NameAr");
+            ViewBag.WorkNature = new SelectList(_context.WorkNatures.ToList(), "Id", "NameAr");
+            ViewBag.EconomicLevel = new SelectList(_context.EconomicLevel.ToList(), "Id", "NameAr");
+            ViewBag.PersonalEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "NameAr");
+            ViewBag.FatherEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "NameAr");
+            ViewBag.MotherEducationalStatus = new SelectList(_context.EducationalStatus.ToList(), "Id", "NameAr");
             return View(handicappedInfo);
         }
 

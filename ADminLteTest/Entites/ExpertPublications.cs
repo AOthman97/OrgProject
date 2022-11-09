@@ -19,6 +19,7 @@ namespace ADminLteTest.Entites
         [Display(Name = "الناشر")]
         public string Publisher { get; set; }
         [Required(ErrorMessage = "سنة النشر مطلوبة!")]
+        [DataType(DataType.Date)]
         [Display(Name = "سنة النشر")]
         public DateTime PublishYear { get; set; }
     }
