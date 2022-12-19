@@ -16,28 +16,10 @@
             @Html.DisplayFor(model => model.FullName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
+            النوع
         </dt>
         <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Weaknesses)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Weaknesses)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FatherMobile)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.FatherMobile)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MotherMobile)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.MotherMobile)
+            @Html.DisplayFor(model => model.Genders.GenderType)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.BirthDate)
@@ -52,16 +34,16 @@
             @Html.DisplayFor(model => model.Age)
         </dd>
         <dt class = "col-sm-2">
-            النوع
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Genders.GenderType)
-        </dd>
-        <dt class = "col-sm-2">
             المنظمة
         </dt>
         <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.OrgDetails.NameAr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Address)
         </dd>
         <dt class = "col-sm-2">
             المدينة
@@ -76,53 +58,26 @@
             @Html.DisplayFor(model => model.Districts.NameAr)
         </dd>
         <dt class = "col-sm-2">
-            الفئة
+            @Html.DisplayNameFor(model => model.OrderInFamily)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.OrderInFamily)
+        </dd>
+        <dt class = "col-sm-2">
+            نوع الإعاقة
         </dt>
         <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Categories.NameAr)
         </dd>
         <dt class = "col-sm-2">
-            طبيعة العمل
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.WorkNatures.NameAr)
-        </dd>
-        <dt class = "col-sm-2">
-            الحالة الإقتصادية
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.EconomicLevels.NameAr)
-        </dd>
-        <dt class = "col-sm-2">
-            نوع السكن
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.AccommodationTypes.NameAr)
-        </dd>
-        <dt class = "col-sm-2">
-            الحالة التعليمية
+            @Html.DisplayNameFor(model => model.EducationalStatusNo)
         </dt>
         <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.PersonalEducationalStatuses.NameAr)
         </dd>
-        <dt class = "col-sm-2">
-            حالة الأب التعليمية
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.FatherEducationalStatuses.NameAr)
-        </dd>
-        <dt class = "col-sm-2">
-            حالة الأم التعليمية
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.MotherEducationalStatuses.NameAr)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IsWorking)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.IsWorking)
-        </dd>
+        @*<dt class = "col-sm-2">
+            المهارات والقدرات عند المعاق:
+        </dt>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.HafezCapability)
         </dt>
@@ -146,6 +101,60 @@
         </dt>
         <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.LiteratureCapability)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Weaknesses)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Weaknesses)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FatherEducationalStatusNo)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.FatherEducationalStatuses.NameAr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FatherMobile)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.FatherMobile)
+        </dd>
+        <dt class = "col-sm-2">
+            حالة الأم التعليمية
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.MotherEducationalStatuses.NameAr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MotherMobile)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.MotherMobile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsWorking)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.IsWorking)
+        </dd>
+        <dt class = "col-sm-2">
+            طبيعة العمل
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.WorkNatures.NameAr)
+        </dd>
+        <dt class = "col-sm-2">
+            الحالة الإقتصادية
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.EconomicLevels.NameAr)
+        </dd>
+        <dt class = "col-sm-2">
+            نوع السكن
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.AccommodationTypes.NameAr)
         </dd>
     </dl>
     

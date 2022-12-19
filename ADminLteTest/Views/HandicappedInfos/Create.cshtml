@@ -28,24 +28,9 @@
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Weaknesses" class="control-label"></label>
-                <input asp-for="Weaknesses" class="form-control" />
-                <span asp-validation-for="Weaknesses" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FatherMobile" class="control-label"></label>
-                <input asp-for="FatherMobile" class="form-control" />
-                <span asp-validation-for="FatherMobile" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MotherMobile" class="control-label"></label>
-                <input asp-for="MotherMobile" class="form-control" />
-                <span asp-validation-for="MotherMobile" class="text-danger"></span>
+                <label asp-for="GenderNo" class="control-label"></label>
+                <select asp-for="@Model.GenderNo" class="form-control"
+                        asp-items="Genders"></select>
             </div>
             <div class="form-group">
                 <label asp-for="BirthDate" class="control-label"></label>
@@ -58,14 +43,14 @@
                 <span asp-validation-for="Age" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="GenderNo" class="control-label"></label>
-                <select asp-for="@Model.GenderNo" class="form-control"
-                        asp-items="Genders"></select>
-            </div>
-            <div class="form-group">
                 <label asp-for="OrgDetailsNo" class="control-label"></label>
                 <select asp-for="@Model.OrgDetailsNo" class="form-control"
                         asp-items="OrgDetails"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CityNo" class="control-label"></label>
@@ -78,24 +63,13 @@
                         asp-items="District"></select>
             </div>
             <div class="form-group">
+                <label asp-for="OrderInFamily" class="control-label"></label>
+                <input asp-for="OrderInFamily" class="form-control" />
+            </div>
+            <div class="form-group">
                 <label asp-for="CategoryNo" class="control-label"></label>
                 <select asp-for="@Model.CategoryNo" class="form-control"
                         asp-items="Category"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="WorkNatureNo" class="control-label"></label>
-                <select asp-for="@Model.WorkNatureNo" class="form-control"
-                        asp-items="WorkNature"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="EconomicLevelNo" class="control-label"></label>
-                <select asp-for="@Model.EconomicLevelNo" class="form-control"
-                        asp-items="EconomicLevel"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="AccommodationTypeNo" class="control-label"></label>
-                <select asp-for="@Model.AccommodationTypeNo" class="form-control"
-                        asp-items="AccommodationType"></select>
             </div>
             <div class="form-group">
                 <label asp-for="EducationalStatusNo" class="control-label"></label>
@@ -104,20 +78,7 @@
                 <span asp-validation-for="EducationalStatusNo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FatherEducationalStatusNo" class="control-label"></label>
-                <select asp-for="@Model.FatherEducationalStatusNo" class="form-control"
-                        asp-items="FatherEducationalStatus"></select>
-                <span asp-validation-for="FatherEducationalStatusNo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MotherEducationalStatusNo" class="control-label"></label>
-                <select asp-for="@Model.MotherEducationalStatusNo" class="form-control"
-                        asp-items="MotherEducationalStatus"></select>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    @Html.DisplayNameFor(model => model.IsWorking) <input class="form-check-input" asp-for="IsWorking" />
-                </label>
+                <label class="control-label">المهارات والقدرات عند المعاق:</label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -138,6 +99,52 @@
                 <label class="form-check-label">
                     @Html.DisplayNameFor(model => model.LiteratureCapability) <input class="form-check-input" asp-for="LiteratureCapability" /> 
                 </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weaknesses" class="control-label"></label>
+                <input asp-for="Weaknesses" class="form-control" />
+                <span asp-validation-for="Weaknesses" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FatherEducationalStatusNo" class="control-label"></label>
+                <select asp-for="@Model.FatherEducationalStatusNo" class="form-control"
+                        asp-items="FatherEducationalStatus"></select>
+                <span asp-validation-for="FatherEducationalStatusNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FatherMobile" class="control-label"></label>
+                <input asp-for="FatherMobile" class="form-control" />
+                <span asp-validation-for="FatherMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotherEducationalStatusNo" class="control-label"></label>
+                <select asp-for="@Model.MotherEducationalStatusNo" class="form-control"
+                        asp-items="MotherEducationalStatus"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotherMobile" class="control-label"></label>
+                <input asp-for="MotherMobile" class="form-control" />
+                <span asp-validation-for="MotherMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    @Html.DisplayNameFor(model => model.IsWorking) <input class="form-check-input" asp-for="IsWorking" />
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkNatureNo" class="control-label"></label>
+                <select asp-for="@Model.WorkNatureNo" class="form-control"
+                        asp-items="WorkNature"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EconomicLevelNo" class="control-label"></label>
+                <select asp-for="@Model.EconomicLevelNo" class="form-control"
+                        asp-items="EconomicLevel"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccommodationTypeNo" class="control-label"></label>
+                <select asp-for="@Model.AccommodationTypeNo" class="form-control"
+                        asp-items="AccommodationType"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="الإضافة" class="btn btn-primary" />
